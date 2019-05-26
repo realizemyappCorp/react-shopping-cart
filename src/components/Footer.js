@@ -24,7 +24,7 @@ const Footer = props => {
         </a>
       </p>
       <p>
-        &copy; 2017 <strong>Veggy</strong> - Organic Green Store
+        &copy; 2019 <strong>IVOIREPROLUX</strong> - LA VENTE EN LIGNE PRO
       </p>
     </footer>
   );

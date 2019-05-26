@@ -8,8 +8,8 @@ const NoResults = () => {
           src="https://res.cloudinary.com/sivadass/image/upload/v1494699523/icons/bare-tree.png"
           alt="Empty Tree"
         />
-        <h2>Sorry, no products matched your search!</h2>
-        <p>Enter a different keyword and try.</p>
+      <h2>Desole , pas de produits corresponds a votre recherche!</h2>
+        <p>Entrer un autre mot cle.</p>
       </div>
     </div>
   );

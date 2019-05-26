@@ -109,15 +109,16 @@ class Header extends Component {
         </CSSTransitionGroup>
       );
     }
+    // <img
+    //   className="logo"
+    //   src="https://res.cloudinary.com/sivadass/image/upload/v1493547373/dummy-logo/Veggy.png"
+    //   alt="Veggy Brand Logo"
+    // />
     return (
       <header>
         <div className="container">
-          <div className="brand">
-            <img
-              className="logo"
-              src="https://res.cloudinary.com/sivadass/image/upload/v1493547373/dummy-logo/Veggy.png"
-              alt="Veggy Brand Logo"
-            />
+          <div className="brand" >
+            IVOIREPROLUX
           </div>
 
           <div className="search">
@@ -151,7 +152,7 @@ class Header extends Component {
               <input
                 type="search"
                 ref="searchBox"
-                placeholder="Search for Vegetables and Fruits"
+                placeholder="Recherche de produits"
                 className="search-keyword"
                 onChange={this.props.handleSearch}
               />
@@ -168,14 +169,14 @@ class Header extends Component {
               <table>
                 <tbody>
                   <tr>
-                    <td>No. of items</td>
+                    <td>Nbr. de produits</td>
                     <td>:</td>
                     <td>
                       <strong>{this.props.totalItems}</strong>
                     </td>
                   </tr>
                   <tr>
-                    <td>Sub Total</td>
+                    <td>Sous Total</td>
                     <td>:</td>
                     <td>
                       <strong>{this.props.total}</strong>
