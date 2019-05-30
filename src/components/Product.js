@@ -96,7 +96,7 @@ class Product extends Component {
               quantity
             )}
           >
-            {!this.state.isAdded ? "AJOUTER AU PANIER" : "✔ ADDED"}
+            {!this.state.isAdded ? "AJOUTER AU PANIER" : "✔ AJOUTE"}
           </button>
         </div>
       </div>

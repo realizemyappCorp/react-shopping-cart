@@ -192,8 +192,10 @@ class Header extends Component {
               ref="cartButton"
             >
               <img
+                height="35"
+                width="32"
                 className={this.props.cartBounce ? "tada" : " "}
-                src="https://res.cloudinary.com/sivadass/image/upload/v1493548928/icons/bag.png"
+                src="iconfinder_simpline_41_2305621.png"
                 alt="Cart"
               />
               {this.props.totalItems ? (
@@ -214,7 +216,7 @@ class Header extends Component {
                   type="button"
                   className={this.state.cart.length > 0 ? " " : "disabled"}
                 >
-                  PROCEED TO CHECKOUT
+                  VALIDER LA COMMANDE
                 </button>
               </div>
             </div>

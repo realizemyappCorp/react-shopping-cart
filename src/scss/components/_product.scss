@@ -32,8 +32,8 @@
     font-weight: 700;
     line-height: 22px;
     margin-bottom: 16px;
-    &:before {
-      content: "CFA ";
+    &:after {
+      content: " CFA";
     }
   }
   .product-name,
@@ -78,13 +78,13 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     &:hover {
-      color: $primary-green;
-      border-color: $primary-green;
+      color: $royal-yellow;
+      border-color: $royal-yellow;
     }
     &:active {
       color: $white;
-      border-color: $primary-green;
-      background: lighten($primary-green, 15%);
+      border-color: $royal-yellow;
+      background: lighten($royal-yellow, 15%);
     }
   }
   .quantity {
@@ -96,7 +96,7 @@
     border: 1px solid $gray-eighty;
     &:focus {
       outline: none;
-      border-color: $primary-green;
+      border-color: $royal-yellow;
     }
   }
 }

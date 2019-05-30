@@ -35,9 +35,10 @@ class App extends Component {
     this.closeModal = this.closeModal.bind(this);
   }
   // Fetch Initial Set of Products from external API
+  // "https://res.cloudinary.com/sivadass/raw/upload/v1535817394/json/products.json";
   getProducts() {
     let url =
-      "https://res.cloudinary.com/sivadass/raw/upload/v1535817394/json/products.json";
+      "http://back-ivoireluxpro.herokuapp.com/Files/";
     axios.get(url).then(response => {
       this.setState({
         products: response.data

@@ -286,8 +286,8 @@ header {
     .product-price {
       color: $gray-light;
       font-weight: 700;
-      &:before {
-        content: "₹ ";
+      &:after {
+        content: " CFA";
       }
     }
   }
@@ -302,8 +302,8 @@ header {
       color: $gray-dark;
       font-weight: 700;
       text-align: right;
-      &:before {
-        content: "₹ ";
+      &::after {
+        content: " CFA";
       }
     }
   }
