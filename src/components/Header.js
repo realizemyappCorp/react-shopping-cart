@@ -5,14 +5,34 @@ import EmptyCart from "../empty-states/EmptyCart";
 import CSSTransitionGroup from "react-transition-group/CSSTransitionGroup";
 import { findDOMNode } from "react-dom";
 
+import logo from '../images/logo.png';
+
+
+
+import VisibilitySensor from "./visibility-sensor";
+
+import  Tourne  from "./Carousel"
+
+import  SimpleHeader  from "./simpleHeader"
+import '../scss/group.css';
+
+
+
+
+
+
+
 class Header extends Component {
   constructor(props) {
     super(props);
+    console.log(props)
     this.state = {
       showCart: false,
       cart: this.props.cartItems,
       mobileSearch: false
     };
+    this.onChange = this.onChange.bind(this);
+
   }
   handleCart(e) {
     e.preventDefault();
@@ -67,6 +87,13 @@ class Header extends Component {
       true
     );
   }
+
+  onChange = isVisible => {
+    this.setState({
+      msg: "Element is now " + (isVisible ? "visible" : "hidden")
+    });
+  };
+
   render() {
     let cartItems;
     cartItems = this.state.cart.map(product => {
@@ -115,10 +142,23 @@ class Header extends Component {
     //   alt="Veggy Brand Logo"
     // />
     return (
+      <VisibilitySensor onScroll={this.onChange}>
       <header>
+
+          <h3 className="numeros">NOUS CONTACTER : 65 53 39 21 / 73 14 86 61</h3>
+
         <div className="container">
           <div className="brand" >
-            IVOIREPROLUX
+            {/* IVOIREPROLUX */}
+       <img
+         className="logo"
+         src={logo}
+         alt="Ivoireprolux Logo"
+       />
+       {/* alternative header in case of scroll */}
+       <div>
+         {this.props.simpleHeader && <SimpleHeader/>}
+       </div>
           </div>
 
           <div className="search">
@@ -222,7 +262,11 @@ class Header extends Component {
             </div>
           </div>
         </div>
+        <Tourne/>
+
       </header>
+    </VisibilitySensor>
+
     );
   }
 }

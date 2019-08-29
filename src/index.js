@@ -6,6 +6,11 @@ import Products from "./components/Products";
 import Footer from "./components/Footer";
 import QuickView from "./components/QuickView";
 import "./scss/style.scss";
+// const VisibilitySensor = require('react-visibility-sensor');
+import VisibilitySensor from "./components/visibility-sensor";
+
+
+
 
 class App extends Component {
   constructor() {
@@ -20,7 +25,8 @@ class App extends Component {
       cartBounce: false,
       quantity: 1,
       quickViewProduct: {},
-      modalActive: false
+      modalActive: false,
+      simpleHeader :false
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleMobileSearch = this.handleMobileSearch.bind(this);
@@ -33,6 +39,7 @@ class App extends Component {
     this.handleRemoveProduct = this.handleRemoveProduct.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
   }
   // Fetch Initial Set of Products from external API
   // "https://res.cloudinary.com/sivadass/raw/upload/v1535817394/json/products.json";
@@ -45,13 +52,42 @@ class App extends Component {
       });
     });
   }
+  onChange = isVisible => {
+    console.log("Element is now " + (isVisible ? "visible" : "hidden"))
+    this.setState({
+      msg: "Element is now " + (isVisible ? "visible" : "hidden"),
+      simpleHeader:!isVisible
+    });
+  };
+
   componentWillMount() {
     this.getProducts();
+  }
+
+  componentDidMount(){
+    window.addEventListener("scroll", this.handleScroll);
   }
 
   // Search by Keyword
   handleSearch(event) {
     this.setState({ term: event.target.value });
+  }
+  handleScroll(e){
+    let element = e.target.scrollingElement
+    
+    // console.log(this)
+    // console.log(e)
+    console.log(window.innerHeight)
+    // console.log("scroll")
+    // console.log(element.clientHeight);
+    // console.log(element.top);
+    // console.log(element.offsetHeight);
+    // console.log(element.scrollHeight);
+    // console.log(element.element.scrollTop);
+    // console.log(element.scrollHeight);
+    if (element.scrollHeight - element.scrollTop === element.clientHeight) {
+      // do something at end of scroll
+    }
   }
   // Mobile Search Reset
   handleMobileSearch() {
@@ -155,8 +191,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
-        <Header
+
+      <div className="container" >
+        <VisibilitySensor scrollCheck onChange={this.onChange} onScroll={this.onChange} partialVisibility>
+          <Header
           cartBounce={this.state.cartBounce}
           total={this.state.totalAmount}
           totalItems={this.state.totalItems}
@@ -168,7 +206,11 @@ class App extends Component {
           categoryTerm={this.state.category}
           updateQuantity={this.updateQuantity}
           productQuantity={this.state.moq}
-        />
+          onScroll={this.handleScroll}
+          simpleHeader={this.state.simpleHeader}
+          
+          />
+          </VisibilitySensor>
         <Products
           productsList={this.state.products}
           searchTerm={this.state.term}
@@ -176,6 +218,8 @@ class App extends Component {
           productQuantity={this.state.quantity}
           updateQuantity={this.updateQuantity}
           openModal={this.openModal}
+          onScroll={this.handleScroll}
+
         />
         <Footer />
         <QuickView
