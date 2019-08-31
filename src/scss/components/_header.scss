@@ -10,9 +10,10 @@ header {
   .container {
     display: flex;
     display: -webkit-flex;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 32px;
+    // max-width: 960px;
+    max-width: 75%;
+    // margin: 0 auto;
+    // padding: 0 32px;
   }
   @media (max-width: 991px) {
     padding: 16px;
@@ -35,6 +36,7 @@ header {
   }
 }
 .brand{
+  // color: $primary-orange;
   color: $primary-orange;
   font-size: 2rem;
 }
@@ -49,9 +51,18 @@ header {
 
 // Search Box
 .search {
-  margin-left: 64px;
-  flex-grow: 1;
-  -webkit-flex-grow: 1;
+  // margin-left: 64px;
+  margin-left: 15%;
+  padding-top: 10px; 
+  
+  // margin-left: 85%;
+  // position: absolute;
+  // width: 100%;
+  font-size: 15px;
+
+
+  flex-grow: 2;
+  -webkit-flex-grow: 2;
   @media (max-width: 767px) {
     margin-left: 32px;
   }
@@ -64,6 +75,7 @@ header {
 .search-form {
   display: flex;
   display: -webkit-flex;
+  
   @media (max-width: 480px) {
     display: none;
     position: absolute;
@@ -82,9 +94,9 @@ header {
     height: 36px;
     border: 1px solid $primary-green;
     padding: 0 16px;
-    border-radius: 2px 0 0 2px;
+    border-radius: 12px 0 0 12px;
     width: 100%;
-    max-width: 330px;
+    max-width: 730px;
     &:focus {
       outline: none;
     }
@@ -94,7 +106,7 @@ header {
     }
   }
   .search-button {
-    border-radius: 0 2px 2px 0;
+    border-radius: 0 12px 12px 0;
     background: $primary-green
       url(https://res.cloudinary.com/sivadass/image/upload/v1494692031/icons/search.png)
       center no-repeat;
@@ -127,8 +139,9 @@ header {
 .cart {
   display: flex;
   display: -webkit-flex;
-  margin-left: 64px;
-  position: relative;
+
+  margin-left: 85%;
+  position: absolute;
   z-index: 99;
   @media (max-width: 991px) {
     margin-left: 16px;
@@ -358,4 +371,46 @@ header {
   animation-name: tada;
   animation-duration: 300ms;
   animation-fill-mode: both;
+}
+
+.whishlist{
+  justify-content: center;
+  vertical-align: top;
+  text-align: center;
+  // display: flex;
+  // display: -webkit-flex;
+  position: absolute;
+  // left: 5% !important;
+  margin-left: 77%;
+  // flex-grow: 0.5;
+  text-align: justify;
+  width: [width of img];
+  @media (max-width: 880px) {
+    display : none;
+  }
+
+}
+.whishlist img {
+  display: block;
+  margin: 0 auto;
+}
+.whishlist p {
+ 
+  position: absolute;
+  // display: block;
+  // margin: 0 auto;
+  top : 60%;
+  // margin-bottom: 1.5rem;
+}
+
+.button-connexion{
+  position: absolute;
+  // display: flex;
+  // display: -webkit-flex;
+  margin-left: 69%;
+  @media (max-width: 800px ){
+    display: none;
+    width : 10px;
+  }
+
 }

@@ -6,8 +6,9 @@ import Products from "./components/Products";
 import Footer from "./components/Footer";
 import QuickView from "./components/QuickView";
 import "./scss/style.scss";
-// const VisibilitySensor = require('react-visibility-sensor');
 import VisibilitySensor from "./components/visibility-sensor";
+import  SimpleHeader  from "./components/simpleHeader"
+
 
 
 
@@ -74,17 +75,8 @@ class App extends Component {
   }
   handleScroll(e){
     let element = e.target.scrollingElement
-    
-    // console.log(this)
-    // console.log(e)
     console.log(window.innerHeight)
-    // console.log("scroll")
-    // console.log(element.clientHeight);
-    // console.log(element.top);
-    // console.log(element.offsetHeight);
-    // console.log(element.scrollHeight);
-    // console.log(element.element.scrollTop);
-    // console.log(element.scrollHeight);
+
     if (element.scrollHeight - element.scrollTop === element.clientHeight) {
       // do something at end of scroll
     }
@@ -211,6 +203,7 @@ class App extends Component {
           
           />
           </VisibilitySensor>
+            {/* {this.state.simpleHeader && <SimpleHeader />} */}
         <Products
           productsList={this.state.products}
           searchTerm={this.state.term}

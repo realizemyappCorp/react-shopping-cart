@@ -31,7 +31,6 @@ class Header extends Component {
       cart: this.props.cartItems,
       mobileSearch: false
     };
-    this.onChange = this.onChange.bind(this);
 
   }
   handleCart(e) {
@@ -88,12 +87,6 @@ class Header extends Component {
     );
   }
 
-  onChange = isVisible => {
-    this.setState({
-      msg: "Element is now " + (isVisible ? "visible" : "hidden")
-    });
-  };
-
   render() {
     let cartItems;
     cartItems = this.state.cart.map(product => {
@@ -142,7 +135,6 @@ class Header extends Component {
     //   alt="Veggy Brand Logo"
     // />
     return (
-      <VisibilitySensor onScroll={this.onChange}>
       <header>
 
           <h3 className="numeros">NOUS CONTACTER : 65 53 39 21 / 73 14 86 61</h3>
@@ -150,15 +142,15 @@ class Header extends Component {
         <div className="container">
           <div className="brand" >
             {/* IVOIREPROLUX */}
-       <img
-         className="logo"
-         src={logo}
-         alt="Ivoireprolux Logo"
-       />
-       {/* alternative header in case of scroll */}
-       <div>
-         {this.props.simpleHeader && <SimpleHeader/>}
-       </div>
+            <img
+              className="logo"
+              src={logo}
+              alt="Ivoireprolux Logo"
+            />
+            {/* alternative header in case of scroll */}
+            <div>
+              {this.props.simpleHeader && <SimpleHeader />}
+            </div>
           </div>
 
           <div className="search">
@@ -202,6 +194,23 @@ class Header extends Component {
                 onClick={this.handleSubmit.bind(this)}
               />
             </form>
+          </div>
+          {/* div button connexion */}
+          <div className="button-connexion">
+            <button>Se Connecter</button>
+          </div>
+          {/* new div for whishlist */}
+          <div className="whishlist">
+          <img
+                height="45"
+                width="42"
+                className={this.props.cartBounce ? "tada" : " "}
+                src="heart-100.png"
+                alt="Whishlist"
+              />
+              <br/>
+              <p>Favori</p>
+              
           </div>
 
           <div className="cart">
@@ -262,10 +271,10 @@ class Header extends Component {
             </div>
           </div>
         </div>
+        <br/>
         <Tourne/>
 
       </header>
-    </VisibilitySensor>
 
     );
   }
