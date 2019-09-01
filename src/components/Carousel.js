@@ -1,27 +1,40 @@
 import React from 'react';
 
-import neil from '../images/neil-soni.jpg';
-import car from '../images/car.jpg';
+// import neil from '../images/neil-soni.jpg';
+// import car from '../images/car.png';
+import img1 from '../images/1.png';
+import img2 from '../images/2.png';
+import img3 from '../images/3.png';
+import img4 from '../images/4.png';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
+// import '../scss/components/carousel.scss';
+import '../scss/components/presentation.scss';
 
-const images = [{ source: neil, source: car , source: car }];
+
 
 export default class Tourne extends React.Component {
   render() {
     return( 
-        <Carousel infiniteLoop useKeyboardArrows autoPlay dynamicHeight centerMode >
-            <div >
-                <img src={neil} />
-                <p className="legend">Legend 1</p>
+      <div className="presentation-mode" height="50%">
+        <Carousel infiniteLoop useKeyboardArrows autoPlay  width="100%">
+        {/* className="my-slide content" */}
+            <div  width="100%">
+                <img src={img1} width="100%" />
             </div>
-            <div>
-                <img src={car}/>
-                <p className="legend">Legend 2</p>
+            {/* <div  width="100%">
+                <img src={img2} width="100%" />
+            </div> */}
+            <div  width="100%">
+                <img src={img3} width="100%" />
+            </div>
+            <div  width="100%">
+                <img src={img4} width="100%" />
             </div>
 
         </Carousel>
+      </div>
     ) 
   }
 }

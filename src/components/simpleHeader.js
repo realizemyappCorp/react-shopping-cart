@@ -6,10 +6,10 @@ import '../scss/components/_simpleHeader.scss';
 
 
 const divStyle = {
-    padding: '0',
+    padding: '1%',
     // marginTop : '-105px',
     top  : '0',
-    border: '5px solid pink',
+    // border: '5px solid pink',
     position : 'fixed',
     zIndex : '10',
     display: 'flex',

@@ -149,7 +149,7 @@ class Header extends Component {
             />
             {/* alternative header in case of scroll */}
             <div>
-              {this.props.simpleHeader && <SimpleHeader />}
+              {this.props.simpleHeader && <SimpleHeader  handleSearch={this.props.handleSearch}/>}
             </div>
           </div>
 
@@ -197,7 +197,7 @@ class Header extends Component {
           </div>
           {/* div button connexion */}
           <div className="button-connexion">
-            <button>Se Connecter</button>
+            <button >Se Connecter</button>
           </div>
           {/* new div for whishlist */}
           <div className="whishlist">
@@ -208,8 +208,7 @@ class Header extends Component {
                 src="heart-100.png"
                 alt="Whishlist"
               />
-              <br/>
-              <p>Favori</p>
+              <p>Favoris</p>
               
           </div>
 
@@ -270,9 +269,11 @@ class Header extends Component {
               </div>
             </div>
           </div>
+
         </div>
-        <br/>
-        <Tourne/>
+        <div className="tourne">
+          <Tourne/>
+        </div>
 
       </header>
 
