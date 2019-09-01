@@ -15,7 +15,7 @@ const divStyle = {
     display: 'flex',
     width : '100%',
     backgroundColor : 'white',
-    display: '-webkit-flex'
+    // display: '-webkit-flex'
   };
 
      

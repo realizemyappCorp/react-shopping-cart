@@ -271,6 +271,16 @@ class Header extends Component {
           </div>
 
         </div>
+        <div className="row categories">
+          <div className="column categorie-item"><a href="#">BOUTIQUE OFFICIELLE</a></div>
+          <div className="column categorie-item"><a href="#">DESTOCKAGE</a></div>
+          <div className="column categorie-item"><a href="#">DEALS DU JOUR</a></div>
+          <div className="column categorie-item"><a href="#">NTIC</a></div>
+          <div className="column categorie-item"><a href="#">VEHICULES</a></div>
+          <div className="column categorie-item"><a href="#">IMMOBILIER</a></div>
+          <div className="column categorie-item"><a href="#">MODE</a></div>
+        </div>
+        <br/>
         <div className="tourne">
           <Tourne/>
         </div>

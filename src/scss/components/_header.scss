@@ -445,10 +445,6 @@ display: inline;
   flex-direction: column;
   flex-basis: 100%;
   flex: 0.5;
-  // position: relative;
-  // display: flex;
-  // display: -webkit-flex;
-  // margin-left: 65%;
   top : 5%;
   @media (max-width: 800px ){
     display: none;
@@ -464,4 +460,42 @@ display: inline;
   @media(max-width: 800px){
     display: none;
   }
+}
+
+// manage flex content
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.categories{
+  background-color:#9a9a9a;
+}
+.categorie-item{
+  font-size: 20px;
+  text-align: center;
+  margin: 0 auto;
+  padding :2px;
+  display: table-cell;
+  vertical-align: middle;  
+  font-weight:1000;
+}
+span{
+  display: table-cell;
+  vertical-align: middle;
+}
+link{
+  color :black;
+}
+a{
+  color: black;
 }
