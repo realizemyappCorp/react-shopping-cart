@@ -26,7 +26,9 @@
     "react-responsive-carousel": "^3.1.50",
     "react-scripts": "^3.0.1",
     "react-transition-group": "^1.1.2",
-    "react-visibility-sensor": "^5.1.1"
+    "react-visibility-sensor": "^5.1.1",
+    "css-loader": "^2.1.1",
+    "file-loader": "^1.1.11",
   },
   "devDependencies": {
     "autoprefixer": "^8.6.2",
