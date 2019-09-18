@@ -55,7 +55,11 @@ header {
       margin: 2px 0;
     }
   }
-  
+  .categories{
+    @media(max-width: 550px){
+      display: none;
+    }
+  }
   // Search Box
   .search {
     display: flex;

@@ -47,6 +47,9 @@ header {
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
+  @media(max-width: 450px ){
+    display: none;
+  }
 }
 // Logo
 .brand .logo {
@@ -56,6 +59,13 @@ header {
     margin: 2px 0;
   }
 }
+
+.contacts{
+  @media(max-width: 450px){
+    display: none;
+  }
+}
+
 
 // Search Box
 .search {
@@ -479,6 +489,9 @@ display: inline;
 
 .categories{
   background-color:#9a9a9a;
+  @media(max-width: 550px){
+    display: none;
+  }
 }
 .categorie-item{
   font-size: 20px;

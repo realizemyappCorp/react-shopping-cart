@@ -137,7 +137,10 @@ class Header extends Component {
     return (
       <header>
 
-          <h3 className="numeros">NOUS CONTACTER : 65 53 39 21 / 73 14 86 61</h3>
+          <h3 className="numeros"> 
+          <span className="contacts">
+          NOUS CONTACTER : 65 53 39 21 /
+          </span> 73 14 86 61</h3>
 
         <div className="container">
           <div className="brand" >
@@ -148,10 +151,10 @@ class Header extends Component {
               alt="Ivoireprolux Logo"
             />
             {/* alternative header in case of scroll */}
+          </div>
             <div>
               {this.props.simpleHeader && <SimpleHeader  handleSearch={this.props.handleSearch}/>}
             </div>
-          </div>
 
           <div className="search">
             <a
